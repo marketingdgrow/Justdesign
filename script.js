@@ -305,3 +305,195 @@ if (storyItemsWrap && storyLineProgress) {
   storyItemsWrap.addEventListener("scroll", syncStoryLine, { passive: true });
   window.addEventListener("resize", syncStoryLine);
 }
+
+
+
+// ======================================
+// ROOM SHOWCASE SLIDER
+// ======================================
+const roomSliderSection = document.querySelector(".room-slider-section");
+
+if (roomSliderSection) {
+  const roomSlides = Array.from(roomSliderSection.querySelectorAll(".room-slide"));
+  const roomTabs = Array.from(roomSliderSection.querySelectorAll(".room-slider-tab"));
+  const dotsWrap = roomSliderSection.querySelector(".room-slider-dots");
+  const stage = roomSliderSection.querySelector(".room-slider-stage");
+
+  if (roomSlides.length > 0 && dotsWrap && stage) {
+    let activeIndex = roomSlides.findIndex((slide) => slide.classList.contains("is-active"));
+    let autoTimer = null;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const SWIPE_THRESHOLD = 45;
+
+    if (activeIndex < 0) {
+      activeIndex = 0;
+    }
+
+    function getWrappedIndex(index) {
+      const total = roomSlides.length;
+      return (index + total) % total;
+    }
+
+    function getRelativePosition(index) {
+      const total = roomSlides.length;
+      const rawOffset = index - activeIndex;
+      const wrappedOffset = ((rawOffset + total) % total + total) % total;
+      return wrappedOffset > total / 2 ? wrappedOffset - total : wrappedOffset;
+    }
+
+    function buildDots() {
+      roomSlides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "room-slider-dot";
+        dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+        dot.addEventListener("click", () => {
+          setActive(i);
+          restartAuto();
+        });
+        dotsWrap.appendChild(dot);
+      });
+    }
+
+    function updateClasses() {
+      const dots = Array.from(dotsWrap.querySelectorAll(".room-slider-dot"));
+
+      roomSlides.forEach((slide, index) => {
+        const rel = getRelativePosition(index);
+        slide.classList.remove("is-active", "is-prev", "is-next", "is-far-left", "is-far-right");
+
+        if (rel === 0) {
+          slide.classList.add("is-active");
+          slide.setAttribute("aria-hidden", "false");
+        } else if (rel === -1) {
+          slide.classList.add("is-prev");
+          slide.setAttribute("aria-hidden", "true");
+        } else if (rel === 1) {
+          slide.classList.add("is-next");
+          slide.setAttribute("aria-hidden", "true");
+        } else if (rel < 0) {
+          slide.classList.add("is-far-left");
+          slide.setAttribute("aria-hidden", "true");
+        } else {
+          slide.classList.add("is-far-right");
+          slide.setAttribute("aria-hidden", "true");
+        }
+      });
+
+      roomTabs.forEach((tab, index) => {
+        const isActive = index === activeIndex;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      const activeTab = roomTabs[activeIndex];
+      if (activeTab) {
+        activeTab.scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+          block: "nearest",
+        });
+      }
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === activeIndex);
+      });
+    }
+
+    function setActive(index) {
+      activeIndex = getWrappedIndex(index);
+      updateClasses();
+    }
+
+    function nextSlide() {
+      setActive(activeIndex + 1);
+    }
+
+    function prevSlide() {
+      setActive(activeIndex - 1);
+    }
+
+    function startAuto() {
+      if (autoTimer || roomSlides.length <= 1) return;
+      autoTimer = setInterval(nextSlide, 3500);
+    }
+
+    function stopAuto() {
+      if (!autoTimer) return;
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+
+    function restartAuto() {
+      stopAuto();
+      startAuto();
+    }
+
+    roomTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const index = Number(tab.dataset.slide);
+        if (Number.isNaN(index)) return;
+        setActive(index);
+        restartAuto();
+      });
+    });
+
+    roomSlides.forEach((slide, index) => {
+      slide.addEventListener("click", () => {
+        if (index === activeIndex) return;
+        setActive(index);
+        restartAuto();
+      });
+    });
+
+    stage.addEventListener("mouseenter", stopAuto);
+    stage.addEventListener("mouseleave", startAuto);
+
+    stage.addEventListener(
+      "touchstart",
+      (event) => {
+        if (!event.touches.length) return;
+        touchStartX = event.touches[0].clientX;
+        touchEndX = touchStartX;
+      },
+      { passive: true }
+    );
+
+    stage.addEventListener(
+      "touchmove",
+      (event) => {
+        if (!event.touches.length) return;
+        touchEndX = event.touches[0].clientX;
+      },
+      { passive: true }
+    );
+
+    stage.addEventListener(
+      "touchend",
+      () => {
+        const distance = touchStartX - touchEndX;
+        if (Math.abs(distance) < SWIPE_THRESHOLD) return;
+        if (distance > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+        restartAuto();
+      },
+      { passive: true }
+    );
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        stopAuto();
+      } else {
+        startAuto();
+      }
+    });
+
+    buildDots();
+    updateClasses();
+    startAuto();
+  }
+}
