@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JustDesign Interiors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="hero" id="home">
+        <header class="topbar reveal" data-delay="40">
+          <a class="brand-pill" href="#">
+            <span class="brand-mark">JD</span>
+            <span class="brand-text">
+              <strong>JUST</strong>
+              <small>DESIGN INTERIORS</small>
+            </span>
+          </a>
+
+          <nav class="main-nav" id="primaryNav" aria-label="Primary">
+            <a class="active" href="#">Home</a>
+            <a href="#">Interior</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Blog</a>
+          </nav>
+
+          <button
+            class="nav-toggle"
+            id="navToggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-controls="primaryNav"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <a class="talk-btn" href="#">Lets talk</a>
+        </header>
+
+        <div class="hero-main">
+          <h1 class="hero-title reveal" data-delay="140">
+            Designing Homes
+            <br />
+            That Feel Alive
+          </h1>
+
+          <aside class="customer-wrap right-box">
+            <div class="stack-layer yellow"></div>
+            <div class="stack-layer red"></div>
+            <div class="stack-layer orange"></div>
+
+            <div class="customer-card">
+              <h2>70K+</h2>
+              <p class="customer-label">Happy Customers</p>
+
+              <div class="avatars">
+                <img
+                  src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=96&q=80"
+                  alt="Customer portrait"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=96&q=80"
+                  alt="Customer portrait"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1549351512-c5e12b11f2dc?auto=format&fit=crop&w=96&q=80"
+                  alt="Customer portrait"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?auto=format&fit=crop&w=96&q=80"
+                  alt="Customer portrait"
+                />
+              </div>
+
+              <p class="customer-copy">Trust by families and business worldwide.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="bottom-panels">
+          <article class="glass-card">
+            <img
+              class="panel-image"
+              src="https://images.unsplash.com/photo-1616594039964-3c8f9f14fce9?auto=format&fit=crop&w=560&q=80"
+              alt="Bedroom interior"
+            />
+            <div class="panel-content">
+              <button class="round-icon arrow-btn arrow-light" type="button" aria-label="Open bedroom details">
+                <span class="arrow-line"></span>
+                <span class="arrow-tip"></span>
+              </button>
+              <h3>Calm Spaces to Unwind</h3>
+              <p>
+                Soft textures and soothing tones for the perfect personal retreat.
+              </p>
+              <a class="pill-btn" href="#">Explore Bedrooms</a>
+            </div>
+          </article>
+
+          <article class="glass-card right-panel">
+            <div class="panel-content">
+              <h3>Where function Meets Flavor</h3>
+              <p>
+                Smart layouts and refined design for kitchens that inspire every day.
+              </p>
+              <div class="action-line">
+                <a class="pill-btn" href="#">View Kitchens</a>
+                <button class="mini-icon arrow-btn arrow-dark" type="button" aria-label="Open kitchens">
+                  <span class="arrow-line"></span>
+                  <span class="arrow-tip"></span>
+                </button>
+              </div>
+            </div>
+
+            <img
+              class="panel-image"
+              src="https://images.unsplash.com/photo-1556911220-bda9f7f7597e?auto=format&fit=crop&w=620&q=80"
+              alt="Kitchen interior"
+            />
+          </article>
+        </div>
+      </section>
+
+      <section class="interior-section" id="interior">
+        <div class="interior-wrap">
+          <h2
+            class="interior-outline-title js-letter-title"
+            data-text="INTERIOR DESIGN"
+            aria-label="INTERIOR DESIGN"
+          >
+            INTERIOR DESIGN
+          </h2>
+
+          <p class="interior-tagline reveal" data-delay="80">
+            Interior Design Doesn't have to be expensive or complicated! it
+            should be smart and user friendly.
+          </p>
+
+          <div class="interior-showcase">
+            <button
+              class="next-frame reveal"
+              id="nextCardBtn"
+              data-delay="160"
+              type="button"
+              aria-label="Show next project image"
+            >
+              <img
+                id="nextCardImage"
+                class="next-frame-image"
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"
+                alt="Next interior project preview"
+              />
+              <span class="next-pill">Next Pictures</span>
+            </button>
+
+            <article
+              class="content-card reveal"
+              id="projectContentCard"
+              data-delay="220"
+            >
+              <img
+                id="featureImage"
+                class="feature-photo"
+                src="https://images.unsplash.com/photo-1600607687644-c7f34b5b3b8f?auto=format&fit=crop&w=900&q=80"
+                alt="Interior project"
+              />
+
+              <div class="content-copy">
+                <p class="established" id="establishedText">ESTABLISHED 2009</p>
+                <h3 id="projectTitle">
+                  Interior Design Firm
+                  <br />
+                  Based in Chennai
+                </h3>
+                <p id="projectDesc">
+                  Just Design believes that everyone deserves spaces they truly
+                  enjoy. We create original, interesting and deeply personal
+                  interiors.
+                </p>
+                <a id="projectCta" class="know-more-btn" href="#">Know more</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="results-section" id="results">
+        <div class="results-wrap">
+          <div class="results-content reveal" data-delay="40">
+            <h2>Measured by results</h2>
+            <p class="results-intro">
+              Form's numbers show our drive to craft bold, lasting, innovative,
+              and meaningful design for all.
+            </p>
+
+            <div class="results-grid">
+              <article class="result-item">
+                <p class="result-number">
+                  <span class="count-up" data-target="95" data-suffix="%">0%</span>
+                </p>
+                <p class="result-label">Satisfied partners</p>
+              </article>
+
+              <article class="result-item">
+                <p class="result-number">
+                  <span class="count-up" data-target="250" data-suffix="+">0+</span>
+                </p>
+                <p class="result-label">Unique places created</p>
+              </article>
+
+              <article class="result-item">
+                <p class="result-number">
+                  <span class="count-up" data-target="81" data-suffix="+">0+</span>
+                </p>
+                <p class="result-label">Dreams fulfilled</p>
+              </article>
+
+              <article class="result-item">
+                <p class="result-number">
+                  <span class="count-up" data-target="15" data-suffix="+">0+</span>
+                </p>
+                <p class="result-label">Years of experience</p>
+              </article>
+
+              <article class="result-item">
+                <p class="result-number">
+                  <span class="count-up" data-target="79">0</span>
+                </p>
+                <p class="result-label">Finished projects</p>
+              </article>
+
+              <article class="result-item">
+                <p class="result-number">
+                  <span class="count-up" data-target="11">0</span>
+                </p>
+                <p class="result-label">Honors received</p>
+              </article>
+            </div>
+
+            <a class="results-btn" href="#">Know more</a>
+          </div>
+
+          <div class="results-gallery reveal" data-delay="120">
+            <img
+              class="gallery-main-image"
+              src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=80"
+              alt="Modern living room interior"
+            />
+
+            <div class="gallery-side-stack">
+              <img
+                class="gallery-top-image"
+                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80"
+                alt="Living room interior setup"
+              />
+
+              <div class="gallery-bottom-stack">
+                <img
+                  class="gallery-small-image"
+                  src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=900&q=80"
+                  alt="Sofa and decor interior"
+                />
+                <img
+                  class="gallery-small-image"
+                  src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80"
+                  alt="Luxury hall interior"
+                />
+              </div>
+            </div>
+
+            <div class="results-seal" aria-hidden="true">
+              <svg viewBox="0 0 200 200" role="presentation">
+                <defs>
+                  <path
+                    id="resultsCirclePath"
+                    d="M 100,100 m -70,0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
+                  ></path>
+                </defs>
+                <text>
+                  <textPath href="#resultsCirclePath">
+                    Just Design Interiors - Just Design Interiors -
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-section" id="story">
+        <div class="story-wrap">
+          <div class="story-media">
+            <img
+              class="story-main-image"
+              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
+              alt="Elegant living room interior"
+            />
+
+            <div class="story-seal" aria-hidden="true">
+              <svg viewBox="0 0 200 200" role="presentation">
+                <defs>
+                  <path
+                    id="storyCirclePath"
+                    d="M 100,100 m -68,0 a 68,68 0 1,1 136,0 a 68,68 0 1,1 -136,0"
+                  ></path>
+                </defs>
+                <text>
+                  <textPath href="#storyCirclePath">
+                    Just Design Interiors - Just Design Interiors -
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="story-content">
+            <h2>
+              Lorem Ipsum is dummy text
+              <br />
+              of the printing.
+            </h2>
+
+            <div class="story-scrollbox">
+              <div class="story-line" aria-hidden="true">
+                <span class="story-line-track"></span>
+                <span class="story-line-progress" id="storyLineProgress"></span>
+              </div>
+
+              <div class="story-items" id="storyItems">
+                <article class="story-item">
+                  <h3>Lorem Ipsum is dummy text</h3>
+                  <p>
+                    Form's numbers show our drive to craft bold, lasting,
+                    innovative, and meaningful design for all.
+                  </p>
+                </article>
+
+                <article class="story-item">
+                  <h3>Lorem Ipsum is dummy text</h3>
+                  <p>
+                    Form's numbers show our drive to craft bold, lasting,
+                    innovative, and meaningful design for all.
+                  </p>
+                </article>
+
+                <article class="story-item">
+                  <h3>Lorem Ipsum is dummy text</h3>
+                  <p>
+                    Form's numbers show our drive to craft bold, lasting,
+                    innovative, and meaningful design for all.
+                  </p>
+                </article>
+
+              </div>
+            </div>
+
+            <a class="story-contact-btn" href="#">Contact Us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
