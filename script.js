@@ -146,44 +146,44 @@ if (
   const showcaseProjects = [
     {
       year: "ESTABLISHED 2009",
-      title: "Interior Design Firm\nBased in Chennai",
+      title: "Residential Interior Designer in Chennai",
       description:
-        "Just Design believes that everyone deserves spaces they truly enjoy. We create original, interesting and deeply personal interiors.",
+        "Most homes look finished the day the contractor leaves — and never quite feel right after that. Just Design Interiors works differently. Every home interior project in Chennai begins with understanding how your family moves, rests, and gathers. We plan rooms around those habits, not around a mood board. The result is a home that carries your personality in every corner — not just the ones guests see.",
       image:
-        "https://images.unsplash.com/photo-1600607687644-c7f34b5b3b8f?auto=format&fit=crop&w=900&q=80",
-      alt: "Bedroom interior",
-      cta: "#"
+        "./img/1.jpg",
+    
+      cta: "Explore Home Interiors"
     },
     {
       year: "ESTABLISHED 2011",
-      title: "Modern Living Spaces\nwith Warm Character",
+      title: "Office Interior Designer in Chennai",
       description:
-        "We shape living rooms that blend comfort, practical storage and timeless textures, so every corner feels functional and emotionally rich.",
+        "A poorly designed office costs more than a renovation — it costs attention, energy, and the kind of clear thinking that only happens when the space gets out of the way. Just Design Interiors plans office interiors in Chennai where every layout decision has a reason behind it. Whether it is a private cabin, an open floor, or a client-facing reception — each area is built for the work that actually happens inside it, not the work that looks good in a brochure.",
       image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80",
+        "./img/4.jpg",
       alt: "Living room interior",
-      cta: "#"
+      cta: "Explore Office Interiors"
     },
     {
       year: "ESTABLISHED 2014",
-      title: "Kitchen Concepts\nMade for Daily Life",
+      title: "Modular Kitchen Designers in Chennai",
       description:
-        "From workflow planning to premium finishes, we build kitchens that stay elegant while handling real family routines with ease.",
+        "Not every kitchen needs an island. Not every cook works the same way. Just Design Interiors plans modular kitchens in Chennai around your habits — the way you move between the stove and the counter, the way you store everyday groceries versus once-a-year utensils, and the meals your family actually makes on a Tuesday. No wasted corners. No shelves you never reach. Every cabinet earns its place before a single board is cut.",
       image:
-        "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80",
+        "./img/7.jpg",
       alt: "Kitchen interior",
-      cta: "#"
+      cta: "Explore Modular Kitchens"
     },
-    {
-      year: "ESTABLISHED 2017",
-      title: "Hotel-Style Bedrooms\nBuilt to Relax",
-      description:
-        "Balanced lighting, soft palettes and detailed material selection create bedrooms that feel calm, private and beautifully layered.",
-      image:
-        "https://images.unsplash.com/photo-1616594039964-3c8f9f14fce9?auto=format&fit=crop&w=900&q=80",
-      alt: "Luxury bedroom interior",
-      cta: "#"
-    }
+    // {
+    //   year: "ESTABLISHED 2017",
+    //   title: "Hotel-Style Bedrooms\nBuilt to Relax",
+    //   description:
+    //     "Balanced lighting, soft palettes and detailed material selection create bedrooms that feel calm, private and beautifully layered.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1616594039964-3c8f9f14fce9?auto=format&fit=crop&w=900&q=80",
+    //   alt: "Luxury bedroom interior",
+    //   cta: "#"
+    // }
   ];
 
   let currentIndex = 0;
@@ -389,11 +389,11 @@ if (roomSliderSection) {
 
       const activeTab = roomTabs[activeIndex];
       if (activeTab) {
-        activeTab.scrollIntoView({
-          behavior: "smooth",
-          inline: "center",
-          block: "nearest",
-        });
+        // activeTab.scrollIntoView({
+        //   behavior: "smooth",
+        //   inline: "center",
+        //   block: "nearest",
+        // });
       }
 
       dots.forEach((dot, index) => {
@@ -497,3 +497,112 @@ if (roomSliderSection) {
     startAuto();
   }
 }
+
+
+
+// ===============================
+// ULTRA PREMIUM CAROUSEL
+// ===============================
+(function () {
+  const data = [
+    { img: "./img/15.jpg", title: "Luxury Hall", price: "5,999", old: "8,999" },
+    { img: "./img/14.jpg", title: "Modern Kitchen", price: "6,499", old: "9,999" },
+    { img: "./img/13.jpg", title: "Living Room", price: "4,999", old: "7,999" },
+    { img: "./img/12.jpg", title: "Bedroom", price: "3,999", old: "6,999" },
+    { img: "./img/11.jpg", title: "Office Setup", price: "7,499", old: "10,999" }
+  ];
+
+  const carousel = document.getElementById("ultraCarousel");
+  if (!carousel) return;
+
+  let current = 2;
+
+  function render() {
+    carousel.innerHTML = "";
+
+    data.forEach((item, i) => {
+      const card = document.createElement("div");
+      card.className = "ultra-card";
+
+      let pos = (i - current + data.length) % data.length;
+
+      if (pos === 0) card.classList.add("ultra-far-left");
+      else if (pos === 1) card.classList.add("ultra-left");
+      else if (pos === 2) card.classList.add("ultra-active");
+      else if (pos === 3) card.classList.add("ultra-right");
+      else card.classList.add("ultra-far-right");
+
+      if (pos === 2) {
+        card.innerHTML = `
+          <img src="${item.img}">
+          <div class="ultra-info">
+            <h3>${item.title}</h3>
+            <p>${item.price} /- <span>${item.old}</span></p>
+          </div>
+          <div class="ultra-icon">🛒</div>
+        `;
+      } else {
+        card.innerHTML = `
+          <img src="${item.img}">
+          <div class="ultra-label">lorem ipsum</div>
+        `;
+      }
+
+      carousel.appendChild(card);
+    });
+  }
+
+  function animateRotate() {
+    current = (current + 1) % data.length;
+    render();
+  }
+
+  setInterval(animateRotate, 3000);
+  render();
+})();
+
+
+
+
+
+
+
+
+const elements = document.querySelectorAll(".card, .large");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+
+      const counters = entry.target.querySelectorAll(".count");
+      counters.forEach(counter => {
+        const target = +counter.dataset.target;
+        let count = 0;
+
+        const update = () => {
+          const increment = target / 50;
+          count += increment;
+
+          if (count < target) {
+            counter.textContent = Math.floor(count) + "+";
+            requestAnimationFrame(update);
+          } else {
+            counter.textContent = target + "+";
+          }
+        };
+
+        update();
+      });
+
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+elements.forEach(el => observer.observe(el));
+
+
+
+
+
