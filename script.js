@@ -604,5 +604,17 @@ elements.forEach(el => observer.observe(el));
 
 
 
+const cards = document.querySelectorAll(".stack-card");
+let index = 0;
+
+setInterval(() => {
+  cards[index].classList.remove("active");
+
+  index = (index + 1) % cards.length;
+
+  cards[index].classList.add("active");
+}, 2500);
+
+
 
 
