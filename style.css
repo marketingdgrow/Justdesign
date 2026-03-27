@@ -112,6 +112,7 @@ a{
 .topbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1.2rem;
 }
 
@@ -161,7 +162,11 @@ a{
 }
 
 .main-nav {
-  flex: 1;
+  flex: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(800px, calc(100% - 420px));
   max-width: 800px;
   height: 56px;
   display: flex;
@@ -241,6 +246,21 @@ a{
   color: #0d0d0d;
   background: #ffffff;
   font-weight: 600;
+  position: relative;
+  z-index: 2;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.talk-btn:hover,
+.talk-btn:focus-visible {
+  background: var(--yellow);
+  color: #111111;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(17, 17, 17, 0.14);
 }
 
 .hero-main {
@@ -1326,6 +1346,9 @@ a{
   }
 
   .main-nav {
+    position: static;
+    transform: none;
+    left: auto;
     order: 3;
     width: 100%;
     max-width: none;
