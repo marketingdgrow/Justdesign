@@ -818,7 +818,7 @@ a{
   animation: featureFloat 6.2s ease-in-out infinite;
 }
 
-.retreat-card::before {
+/* .retreat-card::before {
   content: "";
   position: absolute;
   top: -12px;
@@ -826,9 +826,9 @@ a{
   width: 82px;
   height: 82px;
   border-radius: 999px;
-  background: rgba(7, 16, 19, 0.95);
+  background: rgba(218, 225, 228, 0.95);
   z-index: 1;
-}
+}  */
 
 .kitchen-card {
   display: grid;
