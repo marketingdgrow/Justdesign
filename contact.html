@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Just Design Interiors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <div class="contact-page">
+      <header class="topbar contact-topbar reveal" data-delay="20">
+        <a class="brand-pill" href="index.html" aria-label="Just Design Interiors home">
+          <img src="./img/logo1.png" alt="Just Design Interiors logo" class="top-logo" />
+        </a>
+
+        <nav class="main-nav" id="primaryNav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="service.html">Services</a>
+          <a href="contact.html">Appointment</a>
+          <a href="index.html#results">Gallery</a>
+          <a class="active" href="contact.html">Contact</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-controls="primaryNav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <a class="talk-btn" href="contact.html">Lets talk</a>
+      </header>
+
+      <main>
+        <section class="contact-hero reveal">
+          <div class="social-rail" aria-label="Social links">
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="tel:+918056075706" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://www.youtube.com/channel/UCqV25O6NjBYzOIFfriDuEKg" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+
+          <div class="hero-copy">
+            <h1>Get in Touch</h1>
+            <span></span>
+            <p>Feel free to contact us</p>
+          </div>
+        </section>
+
+        <section class="contact-wrap section-pad">
+          <div class="contact-grid">
+            <div class="contact-info-panel reveal" data-delay="60">
+              <div class="contact-card">
+                <h2>J D INTERIORS</h2>
+                <p class="brand-line">Just Design Interiors</p>
+
+                <ul class="contact-list">
+                  <li><i class="fa-solid fa-map"></i> # 7, Ma Po Si Street, MGR nagar, KK Nagar, Chennai - 78</li>
+                  <li><i class="fa-solid fa-phone"></i> phone: +91 80560 75706</li>
+                  <li><i class="fa-solid fa-phone"></i> phone: +91 95002 64955</li>
+                  <li><i class="fa-solid fa-envelope"></i> email: justdesignenquiry@gmail.com</li>
+                </ul>
+
+                <div class="info-socials">
+                  <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" aria-label="Location"><i class="fa-solid fa-location-dot"></i></a>
+                  <a href="https://www.youtube.com/channel/UCqV25O6NjBYzOIFfriDuEKg" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+
+                <a class="appointment-btn" href="contact.html">Appointment</a>
+              </div>
+            </div>
+
+            <div class="form-panel reveal" data-delay="120">
+              <div class="form-shell">
+                <div class="form-header">
+                  <h2>Get Free Consultation</h2>
+                  <span class="online-pill">Online</span>
+                </div>
+
+                <form class="consult-form">
+                  <label>
+                    <span>Name</span>
+                    <input type="text" placeholder="Your Name*" />
+                  </label>
+
+                  <label>
+                    <span>Email</span>
+                    <input type="email" placeholder="Your Email*" />
+                  </label>
+
+                  <label>
+                    <span>Phone</span>
+                    <input type="tel" placeholder="Your Phone Number*" />
+                  </label>
+
+                  <label>
+                    <span>Message</span>
+                    <textarea placeholder="Enter Message*"></textarea>
+                  </label>
+
+                  <button type="submit">Send Now</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="f-col">
+            <img src="./img/logo1.png" alt="logo" />
+            <h3>JUST DESIGN INTERIORS</h3>
+            <p>Modern Your Inner World</p>
+          </div>
+
+          <div class="f-col">
+            <h4>Our company</h4>
+            <p>About us</p>
+            <p>Interior</p>
+            <p>Contacts</p>
+            <p>Privacy policy</p>
+          </div>
+
+          <div class="f-col">
+            <h4>Get in Touch</h4>
+            <p>Instagram</p>
+            <p>Facebook</p>
+            <p>+91 80560 75706</p>
+            <p>+91 95002 64955</p>
+          </div>
+
+          <div class="f-col">
+            <h4>Contact Info</h4>
+            <p>7, Ma Po Si St, MGR Nagar, K. K. Nagar, Chennai-600078</p>
+            <p>justdesignenquiry@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="copyright">
+          Copyright 2026 All Rights Reserved By Just Design Interior
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const navToggle = document.getElementById("navToggle");
+      const siteNav = document.getElementById("primaryNav");
+      const topbar = document.querySelector(".topbar");
+
+      if (navToggle && siteNav && topbar) {
+        navToggle.addEventListener("click", () => {
+          const open = navToggle.getAttribute("aria-expanded") === "true";
+          navToggle.setAttribute("aria-expanded", String(!open));
+          topbar.classList.toggle("menu-open", !open);
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!topbar.contains(event.target)) {
+            navToggle.setAttribute("aria-expanded", "false");
+            topbar.classList.remove("menu-open");
+          }
+        });
+      }
+
+      const revealItems = document.querySelectorAll(".reveal");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reduceMotion) {
+        revealItems.forEach((item) => item.classList.add("in-view"));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.style.transitionDelay = `${Number(entry.target.dataset.delay || 0)}ms`;
+              entry.target.classList.add("in-view");
+            });
+          },
+          { threshold: 0.18 }
+        );
+
+        revealItems.forEach((item) => observer.observe(item));
+      }
+    </script>
+  </body>
+</html>
