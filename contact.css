@@ -5,6 +5,9 @@
   --contact-accent: #a70d12;
   --yellow: #e7eb00;
   --pill-dark: rgba(14, 32, 36, 0.82);
+  --content-max: 1400px;
+  --page-gutter: clamp(16px, 2.5vw, 32px);
+  --section-inline: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2 + var(--page-gutter)));
 }
 
 *,
@@ -42,7 +45,7 @@ img {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  padding: 0.95rem 2rem;
+  padding: 0.95rem var(--section-inline);
   background: rgba(245, 243, 239, 0.94);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -145,7 +148,7 @@ img {
   min-height: 360px;
   display: flex;
   align-items: center;
-  padding: 3rem 2rem 4rem 6rem;
+  padding: 3rem var(--section-inline) 4rem calc(var(--section-inline) + 4rem);
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.12) 48%, rgba(0, 0, 0, 0.38) 100%),
     url("./img/6.jpg") center center / cover no-repeat;
@@ -198,7 +201,13 @@ img {
 }
 
 .section-pad {
-  padding: 4rem 2rem 5rem;
+  padding: 4rem var(--section-inline) 5rem;
+}
+
+.section-pad > * {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
 }
 
 .contact-grid {
@@ -371,7 +380,7 @@ img {
 
 .footer {
   background: #1f1f1f;
-  padding: 80px;
+  padding: 80px var(--section-inline);
   color: #ffffff;
 }
 
@@ -379,6 +388,9 @@ img {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 40px;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .footer .f-col img {
@@ -413,6 +425,10 @@ img {
   margin-top: 40px;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  max-width: var(--content-max);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .reveal {

@@ -9,6 +9,9 @@
   --orange: #f06b2d;
   --red: #e53223;
   --white: #ffffff;
+  --content-max: 1400px;
+  --page-gutter: clamp(16px, 2.5vw, 32px);
+  --section-inline: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2 + var(--page-gutter)));
 }
 
 *,
@@ -60,7 +63,7 @@ a{
   display: flex;
   flex-direction: column;
   border-radius: 0;
-  padding: 1.8rem 2.2rem 1.5rem;
+  padding: 1.8rem var(--section-inline) 1.5rem;
   background:
     linear-gradient(103deg, rgba(0, 0, 0, 0.44) 6%, rgba(0, 0, 0, 0.18) 66%),
     url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80")
@@ -267,9 +270,9 @@ a{
 .customer-wrap {
   position: relative;
   top: -40px;
-  width: clamp(270px, 29vw, 300px);
-  height: 270px;
-  margin-right: 0.6rem;
+  width: clamp(290px, 31vw, 320px);
+  height: 280px;
+  margin-right: 1.2rem;
   flex-shrink: 0;
   transform: translate3d(0, 0, 0);
   transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -789,7 +792,7 @@ a{
 .feature-panels {
   position: relative;
   margin-top: auto;
-  width: min(930px, 82%);
+  width: min(990px, 88%);
   margin-inline: auto;
   display: grid;
   grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
@@ -812,10 +815,11 @@ a{
 
 .retreat-card {
   display: grid;
-  grid-template-columns: 132px minmax(0, 1fr);
+  grid-template-columns: 152px minmax(0, 1.9fr);
   align-items: end;
-  gap: 0.95rem;
+  gap: 0.6rem;
   animation: featureFloat 6.2s ease-in-out infinite;
+  padding: 10px;
 }
 
 /* .retreat-card::before {
@@ -836,6 +840,7 @@ a{
   align-items: end;
   gap: 1rem;
   animation: featureFloat 6.2s ease-in-out 0.75s infinite;
+  padding: 10px;
 }
 
 .feature-thumb {
@@ -846,12 +851,13 @@ a{
 }
 
 .feature-thumb-portrait {
-  width: 132px;
+  width: 152px;
   height: 182px;
+  justify-self: start;
 }
 
 .feature-thumb-wide {
-  width: 222px;
+  width: 192px;
   height: 168px;
   justify-self: end;
 }
@@ -869,17 +875,19 @@ a{
 
 .feature-copy-block h3 {
   margin: 0;
-  font-size: clamp(1rem, 1.2vw, 1.34rem);
+  font-size: clamp(1rem, 1.2vw, 1.8rem);
   line-height: 1.16;
-  max-width: 11ch;
+  max-width: 100%;
+  margin-top: 10px;
 }
 
 .feature-copy-block p {
-  margin: 0.72rem 0 0;
+  margin: 0.72rem 0 0.7rem;
   font-size: 0.92rem;
   line-height: 1.42;
   color: var(--text-soft);
-  max-width: 25ch;
+  max-width:100%;
+  
 }
 
 .feature-pill {
@@ -957,7 +965,7 @@ a{
 }
 
 .kitchen-card .feature-copy-block h3 {
-  max-width: 17ch;
+  max-width: 25ch;
 }
 
 .kitchen-card .feature-copy-block p {
@@ -1625,7 +1633,7 @@ a{
   margin-top: 0;
   border-radius: 0;
   background: #e7e7e7;
-  padding: clamp(1.4rem, 3.3vw, 2.4rem);
+  padding: clamp(1.4rem, 3.3vw, 2.4rem) var(--section-inline);
   color: #171717;
   min-height: 100vh;
   display: flex;
@@ -1633,7 +1641,8 @@ a{
 }
 
 .interior-wrap {
-  width: min(1200px, 100%);
+  width: 100%;
+  max-width: var(--content-max);
   margin: 0 auto;
 }
 
@@ -1744,7 +1753,7 @@ a{
 
 .feature-photo {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 5;
   border-radius: 30px;
   object-fit: cover;
   box-shadow: 0 18px 38px rgba(0, 0, 0, 0.12);
@@ -1774,15 +1783,17 @@ a{
 
 .content-copy h3 {
   margin: 0.55rem 0 0;
-  font-size: clamp(1.8rem, 3.9vw, 3.2rem);
+  font-size: clamp(1.3rem, 3.3vw, 2.3rem);
   line-height: 1.12;
   color: #090909;
+  text-align: center;
 }
 
 .content-copy p {
   margin: 0.65rem 0 0;
   color: #2a2a2a;
   font-size: clamp(0.93rem, 1.2vw, 1.08rem);
+  text-align: justify;
   line-height: 1.6;
 }
 
@@ -1932,7 +1943,7 @@ a{
   margin-top: 0;
   border-radius: 0;
   background: #e4e4e4;
-  padding: clamp(1.2rem, 3vw, 2.2rem);
+  padding: clamp(1.2rem, 3vw, 2.2rem) var(--section-inline);
   color: #121212;
   min-height: 100vh;
   display: flex;
@@ -1940,7 +1951,8 @@ a{
 }
 
 .results-wrap {
-  width: min(1220px, 100%);
+  width: 100%;
+  max-width: var(--content-max);
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
@@ -1957,15 +1969,15 @@ a{
 
 .results-content h2 {
   margin: 0;
-  font-size: clamp(1.8rem, 3.1vw, 3.1rem);
+  font-size: clamp(1.8rem, 3vw, 3rem);
   line-height: 1.1;
   color: #0f0f0f;
 }
 
 .results-intro {
   margin: 1rem 0 0;
-  max-width: 34ch;
-  font-size: clamp(1rem, 1.55vw, 1.42rem);
+  max-width: 42ch;
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
   line-height: 1.5;
   color: #1f1f1f;
 }
@@ -1992,6 +2004,7 @@ a{
   font-size: clamp(2rem, 3.6vw, 3.8rem);
   font-weight: 700;
   color: #0d0d0d;
+  text-align: center;
 }
 
 .result-label {
@@ -2000,6 +2013,7 @@ a{
   color: #191919;
   font-size: clamp(0.9rem, 1.1vw, 1.12rem);
   line-height: 1.35;
+  text-align: center;
 }
 
 .results-btn {
@@ -2220,12 +2234,13 @@ a{
   display: flex;
   align-items: stretch;
   overflow: hidden;
-  padding: clamp(1.2rem, 3vw, 2.1rem);
+  padding: clamp(1.2rem, 3vw, 2.1rem) var(--section-inline);
   color: #141414;
 }
 
 .story-wrap {
-  width: min(1230px, 100%);
+  width: 100%;
+  max-width: var(--content-max);
   margin: 0 auto;
   height: 100%;
   display: grid;
@@ -2498,7 +2513,7 @@ a{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(46px, 6.5vw, 86px) 0 clamp(60px, 8vw, 102px);
+  padding: clamp(46px, 6.5vw, 86px) var(--section-inline) clamp(60px, 8vw, 102px);
   background: #000;
   color: #fff;
   overflow: hidden;
@@ -2509,9 +2524,10 @@ a{
   align-items: center;
   justify-content: flex-start;
   gap: clamp(14px, 2.4vw, 36px);
-  width: min(1380px, 100%);
+  width: 100%;
+  max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 clamp(16px, 2.5vw, 30px);
+  padding: 0;
   scroll-behavior: smooth;
   white-space: nowrap;
   overflow-x: auto;
@@ -2554,7 +2570,8 @@ a{
 
 .room-slider-stage {
   position: relative;
-  width: min(1380px, 100%);
+  width: 100%;
+  max-width: var(--content-max);
   margin-left: auto;
   margin-right: auto;
   height: clamp(380px, 47vw, 650px);
@@ -2793,7 +2810,7 @@ a{
 
 
 .best-seller-section {
-  padding: 100px 20px;
+  padding: 100px var(--section-inline);
   text-align: center;
   background: radial-gradient(circle at center, #f8f8f8, #eaeaea);
   overflow: hidden;
@@ -2809,8 +2826,11 @@ a{
 /* 3D STAGE */
 .ultra-carousel {
   position: relative;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
   height: 500px;
-  perspective: 1200px;
+  perspective: 1400px;
 }
 
 /* CARD */
@@ -2818,8 +2838,8 @@ a{
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 240px;
-  height: 420px;
+  width: 280px;
+  height: 430px;
   border-radius: 30px;
   overflow: hidden;
   transform-style: preserve-3d;
@@ -2851,7 +2871,7 @@ a{
 
 /* SIDE CARDS */
 .ultra-left {
-  transform: translate(-280px, -50%) rotateY(25deg) scale(0.9);
+  transform: translate(-460px, -50%) rotateY(25deg) scale(0.9);
   filter: blur(2px) brightness(0.7);
   z-index: 5;
 }
@@ -2864,7 +2884,7 @@ a{
 
 /* FAR CARDS */
 .ultra-far-left {
-  transform: translate(-420px, -50%) rotateY(40deg) scale(0.75);
+  transform: translate(-620px, -50%) rotateY(40deg) scale(0.75);
   filter: blur(4px) brightness(0.5);
 }
 
@@ -2937,6 +2957,7 @@ a{
 }
 
 .why-container {
+  width: min(var(--content-max), calc(100% - (var(--page-gutter) * 2)));
   max-width: 1400px;
   margin: auto;
   display: grid;
@@ -3147,13 +3168,16 @@ a{
 /* TESTIMONIAL */
 .testimonial-section {
   background: #f2f2f2;
-  padding: 100px 80px;
+  padding: 100px var(--section-inline);
 }
 
 .testimonial-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .testimonial-top h2 {
@@ -3197,6 +3221,9 @@ a{
   margin-top: 60px;
   display: flex;
   gap: 30px;
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
 }
 
 .t-card {
@@ -3232,13 +3259,16 @@ a{
 .contact-section {
   background: #000;
   color: #fff;
-  padding: 100px 80px;
+  padding: 100px var(--section-inline);
 }
 
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 80px;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .contact-left h2 {
@@ -3261,33 +3291,125 @@ a{
 }
 
 /* FORM */
-.contact-right input,
-.contact-right textarea {
+.contact-right {
+  display: flex;
+}
+
+.contact-section .form-panel {
+  display: flex;
+}
+
+.contact-section .form-shell {
   width: 100%;
-  padding: 18px;
-  border-radius: 30px;
-  border: none;
-  margin-bottom: 15px;
-  background: #ddd;
+  padding: 2rem;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.28);
+  transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
-.contact-right textarea {
-  height: 140px;
-  border-radius: 20px;
+.contact-section .form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  margin-bottom: 1.2rem;
 }
 
-.contact-right button {
-  background: red;
-  color: #fff;
-  padding: 15px 30px;
-  border-radius: 30px;
-  border: none;
+.contact-section .form-header h3 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  color: #151515;
+}
+
+.contact-section .online-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 104px;
+  height: 42px;
+  border-radius: 999px;
+  background: #bb0000;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.contact-section .consult-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-section .consult-form label {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.contact-section .consult-form label > span {
+  color: #222222;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.contact-section .consult-form input,
+.contact-section .consult-form textarea {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #111111;
+  font: inherit;
+  padding: 0.85rem 0.95rem;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.contact-section .consult-form textarea {
+  min-height: 128px;
+  resize: vertical;
+}
+
+.contact-section .consult-form input:focus,
+.contact-section .consult-form textarea:focus {
+  outline: none;
+  border-color: #bb0000;
+  box-shadow: 0 0 0 3px rgba(187, 0, 0, 0.16);
+}
+
+.contact-section .consult-form button {
+  width: 152px;
+  height: 46px;
+  border: 0;
+  border-radius: 999px;
+  background: #171717;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-section .form-shell:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 28px 48px rgba(0, 0, 0, 0.32);
+  }
+
+  .contact-section .consult-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(23, 23, 23, 0.32);
+    background: #0f0f0f;
+  }
 }
 
 /* FOOTER */
 .footer {
   background: #eee;
-  padding: 80px;
+  padding: 80px var(--section-inline);
   color: #000;
 }
 
@@ -3295,6 +3417,9 @@ a{
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 40px;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .footer h4 {
@@ -3316,6 +3441,10 @@ a{
   text-align: center;
   margin-top: 40px;
   font-size: 13px;
+  width: 100%;
+  max-width: var(--content-max);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 1100px) {
@@ -3436,7 +3565,11 @@ a{
     gap: 28px;
   }
 
-  .contact-right button {
+  .contact-section .form-shell {
+    padding: 1.45rem;
+  }
+
+  .contact-section .consult-form button {
     width: 100%;
   }
 
@@ -3513,17 +3646,31 @@ a{
     font-size: 1.05rem;
   }
 
-  .contact-right input,
-  .contact-right textarea {
-    padding: 14px 16px;
-    border-radius: 20px;
+  .contact-section .form-shell {
+    padding: 1.1rem;
   }
 
-  .contact-right textarea {
+  .contact-section .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-section .online-pill {
+    width: 100%;
+  }
+
+  .contact-section .consult-form input,
+  .contact-section .consult-form textarea {
+    padding: 14px 16px;
+    border-radius: 14px;
+  }
+
+  .contact-section .consult-form textarea {
     min-height: 120px;
   }
 
-  .contact-right button {
+  .contact-section .consult-form button {
+    width: 100%;
     padding: 14px 18px;
   }
 

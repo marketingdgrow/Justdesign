@@ -18,20 +18,14 @@
 
         <header class="topbar reveal" data-delay="40">
           <a class="brand-pill" href="#">
-            <!-- <span class="brand-mark">JD</span>
-            <span class="brand-text">
-              <strong>JUST</strong>
-              <small>DESIGN INTERIORS</small>
-            </span> -->
             <img src="./img/logo1.png" alt="" class="top-logo">
           </a>
-
-          <nav class="main-nav" id="primaryNav" aria-label="Primary">
-            <a class="active" href="index.html">Home</a>
-            <a href="#interior">Interior</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="#">Blog</a>
+        <nav class="main-nav" id="primaryNav" aria-label="Primary">
+          <a class="active" href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="service.html">Services</a>
+          <a href="index.html#results">Gallery</a>
+          <a href="contact.html">Contact</a>
           </nav>
 
           <button
@@ -40,8 +34,7 @@
             type="button"
             aria-label="Toggle navigation menu"
             aria-controls="primaryNav"
-            aria-expanded="false"
-          >
+            aria-expanded="false"  >
             <span></span>
             <span></span>
             <span></span>
@@ -151,30 +144,21 @@
                <div class="avatars">
                 <img
                   src="./img/A1.jpg"
-                  alt="Customer portrait"
-                />
+                  alt="Customer portrait"/>
                 <img
                   src="./img/A2.jpg"
-                  alt="Customer portrait"
-                />
+                  alt="Customer portrait"/>
                 <img
                   src="./img/A3.jpg"
-                  alt="Customer portrait"
-                />
+                  alt="Customer portrait"/>
                 <img
                   src="./img/A4.jpg"
-                  alt="Customer portrait"
-                />
+                  alt="Customer portrait"/>
               </div>
 
               <p class="customer-copy">Trust by families and business worldwide.</p>
             </div>
-
-            
           </aside> 
-
-
-
         </div>
 
 
@@ -242,10 +226,10 @@
               <a class="feature-pill" href="#">Explore Bedrooms</a>
             </div>
 
-            <button class="feature-orb" type="button" aria-label="Open bedroom details">
+            <!-- <button class="feature-orb" type="button" aria-label="Open bedroom details">
               <span class="feature-orb-line"></span>
               <span class="feature-orb-tip"></span>
-            </button>
+            </button> -->
           </article>
 
           <article class="feature-card kitchen-card">
@@ -255,9 +239,9 @@
 
               <div class="feature-actions">
                 <a class="feature-pill" href="#">View Kitchens</a>
-                <button class="feature-mini" type="button" aria-label="Open kitchens">
+                <!-- <button class="feature-mini" type="button" aria-label="Open kitchens">
                   <span class="feature-mini-tip"></span>
-                </button>
+                </button> -->
               </div>
             </div>
 
@@ -317,7 +301,7 @@
                 <p class="established" id="establishedText">ESTABLISHED 2009</p>
                 <h3 id="projectTitle">
                   Interior Design Firm
-                  <br />
+                
                   Based in Chennai
                 </h3>
                 <p id="projectDesc">
@@ -609,7 +593,7 @@ We Have Built</h2>
  <section class="best-seller-section">
   <h1>Best sellers</h1>
   <div class="ultra-carousel" id="ultraCarousel"></div>
-</section>
+ </section>
 
 
 <div class="why-container">
@@ -738,12 +722,34 @@ We Have Built</h2>
     </div>
 
     <!-- RIGHT -->
-    <div class="contact-right">
-      <input placeholder="Your name*" />
-      <input placeholder="Your mail*" />
-      <input placeholder="Your phone number*" />
-      <textarea placeholder="Message*"></textarea>
-      <button>Send Message</button>
+    <div class="contact-right form-panel">
+      <div class="form-shell">
+        
+
+        <form class="consult-form">
+          <label>
+            <span>Name</span>
+            <input type="text" placeholder="Your Name*" />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" placeholder="Your Email*" />
+          </label>
+
+          <label>
+            <span>Phone</span>
+            <input type="tel" placeholder="Your Phone Number*" />
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea placeholder="Enter Message*"></textarea>
+          </label>
+
+          <button type="submit">Send Now</button>
+        </form>
+      </div>
     </div>
 
   </div>

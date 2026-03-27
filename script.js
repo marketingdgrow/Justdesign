@@ -537,9 +537,10 @@ if (roomSliderSection) {
           <img src="${item.img}">
           <div class="ultra-info">
             <h3>${item.title}</h3>
-            <p>${item.price} /- <span>${item.old}</span></p>
+           
+
           </div>
-          <div class="ultra-icon">🛒</div>
+          
         `;
       } else {
         card.innerHTML = `
