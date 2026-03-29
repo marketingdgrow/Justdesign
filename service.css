@@ -778,6 +778,990 @@ img {
   font-size: 0.93rem;
 }
 
+.kitchen-design-band {
+  position: relative;
+  margin-top: 0.8rem;
+  padding: 3.45rem var(--section-inline);
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255, 214, 10, 0.15), transparent 28%),
+    radial-gradient(circle at 89% 82%, rgba(159, 16, 22, 0.18), transparent 34%),
+    linear-gradient(138deg, #fef9f2 0%, #f7efe4 45%, #f3e8dd 100%);
+  overflow: hidden;
+}
+
+.kitchen-design-band::before {
+  content: "";
+  position: absolute;
+  inset: -15% -8% auto;
+  height: 320px;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 72%);
+  animation: kitchenGlow 9s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.kitchen-design-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(159, 16, 22, 0.04) 0,
+      rgba(159, 16, 22, 0.04) 1px,
+      transparent 1px,
+      transparent 106px
+    );
+  pointer-events: none;
+}
+
+.kitchen-design-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.kitchen-design-head {
+  width: min(990px, 100%);
+}
+
+.kitchen-kicker {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.kitchen-design-head h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 1.08;
+}
+
+.kitchen-design-head p {
+  margin: 0.85rem 0 0;
+  color: var(--soft);
+  line-height: 1.78;
+  max-width: 72ch;
+}
+
+.kitchen-head-meta {
+  margin-top: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.kitchen-head-meta span {
+  min-height: 33px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.43rem 0.78rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #3b1a1c;
+  border: 1px solid rgba(159, 16, 22, 0.18);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.kitchen-story-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.92fr);
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.kitchen-story-card {
+  border-radius: 22px;
+  border: 1px solid rgba(159, 16, 22, 0.16);
+  background:
+    linear-gradient(158deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.82));
+  box-shadow: 0 14px 26px rgba(90, 66, 24, 0.12);
+  padding: 1.15rem 1.1rem 1.2rem;
+}
+
+.kitchen-story-card h3 {
+  margin: 0;
+  font-size: clamp(1.1rem, 1.9vw, 1.35rem);
+  line-height: 1.3;
+}
+
+.kitchen-story-card p {
+  margin: 0.75rem 0 0;
+  color: var(--soft);
+  line-height: 1.69;
+}
+
+.kitchen-flow-list {
+  margin: 0.85rem 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.52rem;
+}
+
+.kitchen-flow-list li {
+  position: relative;
+  padding-left: 1.35rem;
+  color: #3b3b3b;
+  line-height: 1.54;
+  font-size: 0.9rem;
+}
+
+.kitchen-flow-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #d62d34, #8f0f14);
+  box-shadow: 0 0 0 4px rgba(159, 16, 22, 0.14);
+}
+
+.kitchen-story-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  min-height: 248px;
+  height: 248px;
+}
+
+.kitchen-story-media figure {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(159, 16, 22, 0.2);
+  box-shadow: 0 10px 20px rgba(88, 66, 24, 0.14);
+  transform: translateZ(0);
+}
+
+.kitchen-story-main {
+  grid-row: 1 / span 2;
+  animation: kitchenFloat 8s ease-in-out infinite;
+}
+
+.kitchen-story-side.top {
+  grid-row: 1;
+  animation: kitchenFloat 8s ease-in-out infinite 0.8s;
+}
+
+.kitchen-story-side.bottom {
+  grid-row: 2;
+  animation: kitchenFloat 8s ease-in-out infinite 1.4s;
+}
+
+.kitchen-story-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.kitchen-layouts-wrap {
+  margin-top: 1.25rem;
+}
+
+.kitchen-layouts-head h3,
+.kitchen-fittings-head h3 {
+  margin: 0;
+  font-size: clamp(1.34rem, 2.2vw, 1.85rem);
+}
+
+.kitchen-layout-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.76rem;
+}
+
+.kitchen-layout-card {
+  border-radius: 17px;
+  overflow: hidden;
+  border: 1px solid rgba(159, 16, 22, 0.15);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 18px rgba(88, 66, 24, 0.11);
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.kitchen-layout-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.kitchen-layout-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+}
+
+.kitchen-layout-media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.kitchen-layout-card h4 {
+  margin: 0;
+  padding: 0.78rem 0.84rem 0;
+  font-size: 1.02rem;
+}
+
+.kitchen-layout-card p {
+  margin: 0.48rem 0 0;
+  padding: 0 0.84rem 0.86rem;
+  color: var(--soft);
+  line-height: 1.62;
+  font-size: 0.88rem;
+}
+
+.kitchen-fittings-wrap {
+  margin-top: 1.25rem;
+}
+
+.kitchen-fittings-grid {
+  margin-top: 0.78rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.62rem;
+}
+
+.kitchen-fit-card {
+  border-radius: 15px;
+  border: 1px solid rgba(159, 16, 22, 0.15);
+  background: rgba(255, 255, 255, 0.94);
+  padding: 0.8rem 0.78rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  gap: 0.68rem;
+  box-shadow: 0 8px 16px rgba(88, 66, 24, 0.1);
+  transition:
+    transform 240ms ease,
+    box-shadow 240ms ease,
+    border-color 240ms ease;
+}
+
+.kitchen-fit-card > span {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, rgba(159, 16, 22, 0.12), rgba(159, 16, 22, 0.2));
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.kitchen-fit-card h4 {
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+.kitchen-fit-card p {
+  margin: 0.34rem 0 0;
+  color: var(--soft);
+  line-height: 1.57;
+  font-size: 0.86rem;
+}
+
+.kitchen-proof-cta {
+  margin-top: 1.4rem;
+  border-radius: 20px;
+  padding: 1.12rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(250px, 0.92fr);
+  align-items: stretch;
+  gap: 0.95rem;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.2), transparent 34%),
+    linear-gradient(132deg, #941016, #6f0c11);
+  box-shadow: 0 16px 28px rgba(78, 10, 15, 0.24);
+  overflow: hidden;
+}
+
+.kitchen-proof-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: rgba(255, 244, 227, 0.95);
+}
+
+.kitchen-proof-copy h3 {
+  margin: 0.44rem 0 0;
+  font-size: clamp(1.16rem, 2.2vw, 1.5rem);
+  line-height: 1.25;
+}
+
+.kitchen-proof-points {
+  margin-top: 0.78rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.56rem;
+}
+
+.kitchen-proof-points article {
+  min-height: 86px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.62rem 0.58rem;
+  display: grid;
+  gap: 0.38rem;
+  align-content: start;
+  transition: transform 220ms ease, background-color 220ms ease;
+}
+
+.kitchen-proof-points i {
+  font-size: 0.95rem;
+  color: #ffe8be;
+}
+
+.kitchen-proof-points span {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.kitchen-proof-action {
+  border-radius: 14px;
+  padding: 0.95rem 0.9rem;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  display: grid;
+  align-content: center;
+  gap: 0.72rem;
+}
+
+.kitchen-proof-action p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.kitchen-design-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 46px;
+  border-radius: 999px;
+  padding: 0.74rem 1.16rem;
+  background: linear-gradient(135deg, #ffffff, #fff2df);
+  color: #1f1b16;
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+@keyframes kitchenGlow {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(12px) scale(1.06);
+    opacity: 0.95;
+  }
+}
+
+@keyframes kitchenFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.furniture-design-band {
+  position: relative;
+  margin-top: 0.95rem;
+  padding: 3.6rem var(--section-inline);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(231, 235, 0, 0.08), transparent 30%),
+    radial-gradient(circle at 88% 82%, rgba(187, 40, 44, 0.22), transparent 34%),
+    linear-gradient(130deg, #1c1c1a 0%, #121210 52%, #0f0f0d 100%);
+  overflow: hidden;
+}
+
+.furniture-design-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 84px
+    );
+  pointer-events: none;
+}
+
+.furniture-design-band::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  right: -120px;
+  top: -140px;
+  background: radial-gradient(circle, rgba(255, 214, 120, 0.2) 0%, rgba(255, 214, 120, 0) 70%);
+  animation: furnitureAura 10s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.furniture-design-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.furniture-design-head {
+  width: min(980px, 100%);
+}
+
+.furniture-kicker {
+  margin: 0 0 0.55rem;
+  color: #f2d08d;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.furniture-design-head h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.85rem, 3.55vw, 3rem);
+  line-height: 1.08;
+}
+
+.furniture-design-head p {
+  margin: 0.9rem 0 0;
+  max-width: 74ch;
+  color: rgba(242, 242, 232, 0.84);
+  line-height: 1.78;
+}
+
+.furniture-feature-grid {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.furniture-wardrobe-panel {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(8px);
+  padding: 1.05rem 1rem 1.08rem;
+}
+
+.furniture-wardrobe-panel h3 {
+  margin: 0;
+  color: #fff7e3;
+  font-size: 1.32rem;
+}
+
+.furniture-wardrobe-list {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.62rem;
+}
+
+.furniture-wardrobe-item {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.72rem 0.7rem;
+}
+
+.furniture-wardrobe-item h4 {
+  margin: 0;
+  color: #ffe4ad;
+  font-size: 0.96rem;
+  line-height: 1.35;
+}
+
+.furniture-wardrobe-item p {
+  margin: 0.42rem 0 0;
+  color: rgba(235, 235, 225, 0.82);
+  line-height: 1.55;
+  font-size: 0.84rem;
+}
+
+.furniture-media-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 0.58rem;
+  min-height: 260px;
+  height: 260px;
+}
+
+.furniture-media-panel figure {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.34);
+}
+
+.furniture-media-main {
+  grid-row: 1 / span 2;
+  animation: furnitureFloat 8s ease-in-out infinite;
+}
+
+.furniture-media-side.top {
+  grid-row: 1;
+  animation: furnitureFloat 8s ease-in-out infinite 0.7s;
+}
+
+.furniture-media-side.bottom {
+  grid-row: 2;
+  animation: furnitureFloat 8s ease-in-out infinite 1.2s;
+}
+
+.furniture-media-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 480ms ease;
+}
+
+.furniture-build-wrap {
+  margin-top: 1.2rem;
+}
+
+.furniture-build-head h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.3rem, 2.25vw, 1.82rem);
+}
+
+.furniture-build-grid {
+  margin-top: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.62rem;
+}
+
+.furniture-build-item {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  min-height: 54px;
+  padding: 0.6rem 0.62rem;
+  display: flex;
+  align-items: center;
+  gap: 0.48rem;
+  color: rgba(247, 247, 238, 0.95);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.furniture-build-item i {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 228, 151, 0.18);
+  color: #f7d59b;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.furniture-build-item span {
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.furniture-cta-box {
+  margin-top: 1.18rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 227, 170, 0.34);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.28), transparent 35%),
+    linear-gradient(130deg, #f0d39a, #dcb978);
+  padding: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem 0.9rem;
+}
+
+.furniture-cta-box p {
+  margin: 0;
+  color: #2a2012;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.furniture-cta-btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #171717, #0f0f0f);
+  color: #fff4dd;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+@keyframes furnitureFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes furnitureAura {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.architect-design-band {
+  position: relative;
+  margin-top: 0.95rem;
+  padding: 3.5rem var(--section-inline);
+  /* background:
+    radial-gradient(circle at 10% 10%, rgba(98, 219, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 86% 78%, rgba(31, 146, 255, 0.18), transparent 34%),
+    linear-gradient(135deg, #0e1d2d 0%, #0a1521 55%, #08111b 100%); */
+  overflow: hidden;
+}
+
+.architect-design-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(133, 181, 223, 0.12) 0,
+      rgba(133, 181, 223, 0.12) 1px,
+      transparent 1px,
+      transparent 76px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(133, 181, 223, 0.1) 0,
+      rgba(133, 181, 223, 0.1) 1px,
+      transparent 1px,
+      transparent 76px
+    );
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 88%);
+  pointer-events: none;
+}
+
+.architect-design-band::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  left: -90px;
+  bottom: -130px;
+  background: radial-gradient(circle, rgba(117, 246, 255, 0.25) 0%, rgba(117, 246, 255, 0) 72%);
+  animation: architectPulse 9s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.architect-design-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.architect-design-head {
+  width: min(900px, 100%);
+  margin: auto;
+}
+
+.architect-kicker {
+  margin: 0 0 0.55rem;
+  color: #447c88;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.architect-design-head h2 {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(1.85rem, 3.45vw, 2.9rem);
+  line-height: 1.08;
+  text-align: center;
+}
+
+.architect-design-head p {
+  margin: 0.9rem 0 0;
+  max-width: 90ch;
+  color: rgba(44, 47, 49, 0.86);
+  line-height: 1.78;
+  text-align: center;
+}
+
+.architect-creative-layout {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+  gap: 0.95rem;
+  align-items: start;
+}
+
+.architect-visual-panel {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid rgba(154, 207, 245, 0.32);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  padding: 0.7rem;
+}
+
+.architect-visual-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0.45rem;
+  border-radius: 14px;
+  border: 1px dashed rgba(91, 115, 129, 0.28);
+  pointer-events: none;
+}
+
+.architect-hero-media {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(42, 55, 65, 0.34);
+}
+
+.architect-hero-media img {
+  width: 100%;
+  height: 262px;
+  object-fit: cover;
+  transition: transform 520ms ease;
+}
+
+.architect-float-note {
+  position: absolute;
+  min-width: 128px;
+  border-radius: 11px;
+  border: 1px solid rgba(168, 223, 255, 0.42);
+  background: rgba(6, 19, 31, 0.78);
+  padding: 0.45rem 0.52rem;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.28);
+  animation: architectNoteFloat 7s ease-in-out infinite;
+}
+
+.architect-float-note.one {
+  left: -8px;
+  top: 18px;
+}
+
+.architect-float-note.two {
+  right: -8px;
+  top: 46%;
+  animation-delay: 1s;
+}
+
+.architect-float-note span {
+  display: block;
+  color: #91e6ff;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.architect-float-note strong {
+  display: block;
+  margin-top: 0.12rem;
+  color: #f2fbff;
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.architect-thumb-row {
+  margin-top: 0.56rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.52rem;
+}
+
+.architect-thumb-row figure {
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(76, 88, 95, 0.33);
+}
+
+.architect-thumb-row img {
+  width: 100%;
+  height: 88px;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.architect-timeline {
+  position: relative;
+  display: grid;
+  gap: 0.62rem;
+  padding-left: 0.95rem;
+}
+
+.architect-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.16rem;
+  top: 0.28rem;
+  bottom: 0.28rem;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(131, 232, 255, 0.3), rgba(131, 232, 255, 0.88), rgba(131, 232, 255, 0.3));
+}
+
+.architect-timeline-item {
+  position: relative;
+  border-radius: 14px;
+  border: 1px solid rgba(87, 101, 112, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0.72rem 0.72rem 0.78rem 2.6rem;
+  transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease;
+}
+
+.architect-step {
+  position: absolute;
+  left: -0.67rem;
+  top: 0.76rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, #8be7ff, #61c6f2);
+  color: #0b1b28;
+  font-size: 0.72rem;
+  font-weight: 800;
+  box-shadow: 0 0 0 6px rgba(107, 197, 236, 0.2);
+}
+
+.architect-timeline-item h3 {
+  margin: 0;
+  color: #113b5e;
+  font-size: 1rem;
+  line-height: 1.38;
+}
+
+.architect-timeline-item p {
+  margin: 0.42rem 0 0;
+  color: rgba(64, 70, 73, 0.84);
+  line-height: 1.55;
+  font-size: 0.83rem;
+}
+
+.architect-cta-box {
+  margin-top: 1.15rem;
+  border-radius: 16px;
+  border: 1px solid rgba(125, 226, 255, 0.34);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.2), transparent 30%),
+    linear-gradient(125deg, rgba(196, 224, 233, 0.72), rgba(210, 227, 240, 0.7));
+  padding: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.62rem 0.9rem;
+}
+
+.architect-cta-box p {
+  margin: 0;
+  color: #242727;
+  font-size: 0.93rem;
+  font-weight: 600;
+}
+
+.architect-cta-btn {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.08rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #08131e, #0c1e30);
+  color: #dff8ff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+@keyframes architectNoteFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes architectPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
 .intro-shell {
   width: 100%;
   max-width: var(--content-max);
@@ -1124,6 +2108,72 @@ img {
     box-shadow: 0 18px 30px rgba(159, 16, 22, 0.28);
   }
 
+  .kitchen-story-media:hover img {
+    transform: scale(1.05);
+  }
+
+  .kitchen-layout-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(159, 16, 22, 0.26);
+    box-shadow: 0 20px 34px rgba(88, 66, 24, 0.16);
+  }
+
+  .kitchen-layout-card:hover .kitchen-layout-media img {
+    transform: scale(1.08);
+  }
+
+  .kitchen-fit-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(159, 16, 22, 0.24);
+    box-shadow: 0 18px 30px rgba(88, 66, 24, 0.14);
+  }
+
+  .kitchen-proof-points article:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .kitchen-design-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 28px rgba(8, 8, 8, 0.22);
+  }
+
+  .furniture-media-panel:hover img {
+    transform: scale(1.06);
+  }
+
+  .furniture-wardrobe-item:hover {
+    border-color: rgba(255, 232, 184, 0.4);
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .furniture-build-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 228, 151, 0.42);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .furniture-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .architect-visual-panel:hover .architect-hero-media img,
+  .architect-visual-panel:hover .architect-thumb-row img {
+    transform: scale(1.06);
+  }
+
+  .architect-timeline-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(145, 223, 255, 0.52);
+    background: rgba(255, 255, 255, 0.11);
+  }
+
+  .architect-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.34);
+  }
+
   .audience-card:hover {
     transform: translateY(-5px);
     border-color: rgba(159, 16, 22, 0.24);
@@ -1176,6 +2226,48 @@ img {
 
   .home-design-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kitchen-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kitchen-story-media {
+    min-height: 226px;
+    height: 226px;
+  }
+
+  .kitchen-layout-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kitchen-proof-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .kitchen-proof-points {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .furniture-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .furniture-media-panel {
+    min-height: 236px;
+    height: 236px;
+  }
+
+  .furniture-build-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .architect-creative-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .architect-visual-panel {
+    width: min(620px, 100%);
   }
 
   .office-design-head {
@@ -1307,8 +2399,60 @@ img {
     padding: 3rem 1.2rem;
   }
 
+  .kitchen-design-band {
+    padding: 2.7rem 1.2rem;
+  }
+
+  .furniture-design-band {
+    padding: 2.9rem 1.2rem;
+  }
+
+  .architect-design-band {
+    padding: 2.9rem 1.2rem;
+  }
+
   .office-design-band {
     padding: 3rem 1.2rem;
+  }
+
+  .kitchen-story-card {
+    padding: 1rem 0.92rem 1.04rem;
+  }
+
+  .kitchen-layout-grid {
+    gap: 0.68rem;
+  }
+
+  .kitchen-fittings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kitchen-proof-cta {
+    gap: 0.78rem;
+  }
+
+  .kitchen-proof-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .furniture-wardrobe-list {
+    grid-template-columns: 1fr;
+  }
+
+  .furniture-build-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .furniture-cta-box {
+    padding: 0.84rem;
+  }
+
+  .architect-timeline {
+    gap: 0.56rem;
+  }
+
+  .architect-cta-box {
+    padding: 0.82rem;
   }
 
   .office-service-card {
@@ -1410,8 +2554,174 @@ img {
     padding: 2.4rem 1rem;
   }
 
+  .kitchen-design-band {
+    padding: 2.15rem 1rem;
+  }
+
+  .furniture-design-band {
+    padding: 2.2rem 1rem;
+  }
+
+  .architect-design-band {
+    padding: 2.2rem 1rem;
+  }
+
   .office-design-band {
     padding: 2.4rem 1rem;
+  }
+
+  .kitchen-design-head h2 {
+    font-size: clamp(1.48rem, 7.2vw, 1.95rem);
+  }
+
+  .furniture-design-head h2 {
+    font-size: clamp(1.45rem, 7.4vw, 2rem);
+  }
+
+  .architect-design-head h2 {
+    font-size: clamp(1.45rem, 7.4vw, 1.96rem);
+  }
+
+  .kitchen-story-media {
+    min-height: auto;
+    height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 164px 92px;
+  }
+
+  .kitchen-story-main {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .kitchen-story-side.top {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .kitchen-story-side.bottom {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .furniture-media-panel {
+    min-height: auto;
+    height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 172px 96px;
+  }
+
+  .furniture-media-main {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .furniture-media-side.top {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .furniture-media-side.bottom {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .architect-visual-panel {
+    padding: 0.56rem;
+  }
+
+  .architect-hero-media img {
+    height: 214px;
+  }
+
+  .architect-float-note {
+    min-width: 108px;
+    padding: 0.4rem 0.44rem;
+  }
+
+  .architect-float-note.one {
+    left: -4px;
+    top: 14px;
+  }
+
+  .architect-float-note.two {
+    right: -4px;
+    top: 44%;
+  }
+
+  .architect-thumb-row img {
+    height: 74px;
+  }
+
+  .architect-timeline {
+    padding-left: 0.72rem;
+    gap: 0.5rem;
+  }
+
+  .architect-timeline-item {
+    padding: 0.66rem 0.64rem 0.7rem 2.3rem;
+  }
+
+  .architect-step {
+    left: -0.56rem;
+    top: 0.66rem;
+    width: 30px;
+    height: 30px;
+  }
+
+  .kitchen-layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kitchen-fit-card {
+    padding: 0.78rem 0.7rem;
+  }
+
+  .kitchen-proof-copy h3 {
+    font-size: 1.08rem;
+  }
+
+  .kitchen-proof-points {
+    grid-template-columns: 1fr;
+  }
+
+  .kitchen-proof-points article {
+    min-height: 74px;
+  }
+
+  .kitchen-proof-points span,
+  .kitchen-proof-action p {
+    font-size: 0.86rem;
+  }
+
+  .kitchen-design-cta {
+    width: 100%;
+  }
+
+  .furniture-build-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .furniture-build-item {
+    min-height: 48px;
+  }
+
+  .furniture-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .furniture-cta-btn {
+    width: 100%;
+  }
+
+  .architect-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .architect-cta-btn {
+    width: 100%;
   }
 
   .home-design-grid {
@@ -1545,6 +2855,25 @@ img {
   .office-service-card,
   .office-service-media img,
   .office-design-cta,
+  .kitchen-design-band::before,
+  .kitchen-story-media figure,
+  .kitchen-story-media img,
+  .kitchen-layout-card,
+  .kitchen-layout-media img,
+  .kitchen-fit-card,
+  .kitchen-proof-points article,
+  .kitchen-design-cta,
+  .furniture-design-band::after,
+  .furniture-media-panel figure,
+  .furniture-media-panel img,
+  .furniture-build-item,
+  .furniture-cta-btn,
+  .architect-design-band::after,
+  .architect-float-note,
+  .architect-hero-media img,
+  .architect-thumb-row img,
+  .architect-timeline-item,
+  .architect-cta-btn,
   .audience-card,
   .audience-media img,
   .service-card,
